@@ -15,7 +15,7 @@ def sync_code(param):
 
 def async_code(param):
     def run(ctx,resume):
-        ctx['a'] = "what's up?"
+        ctx['a'] = "what's up?" # ctx is the context  which will be delivered along with the function-call-chain
         (err,result) = yield sync_code(param)
         print(err,result)#None hello world
         return 'ok'

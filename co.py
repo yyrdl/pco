@@ -23,7 +23,7 @@ class co:
         self.suspended = True
         self.iterator.throw(StopIteration,"Suspend coroutine manually")  
 
-    def __complie__(self):
+    def __compile__(self):
         if type(self.func) is not types.FunctionType:
             raise TypeError("The argument must be a function!")
 
@@ -96,7 +96,7 @@ class co:
         if type(func) is types.FunctionType:
             self.handler = func
 
-        self.__complie__()
+        self.__compile__()
 
         if self.isGenerator == True:
            return self.run(None)
