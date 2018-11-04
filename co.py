@@ -12,6 +12,8 @@ class co:
         self.iterator = None
         self.isGenerator = False
         self.excption = None
+        if type(self.func) is not types.FunctionType:
+            raise TypeError("The argument must be a function!")
         
     def setCtx(self,ctx):
         self.ctx = ctx
@@ -24,9 +26,6 @@ class co:
         self.iterator.throw(StopIteration,"Suspend coroutine manually")  
 
     def __compile__(self):
-        if type(self.func) is not types.FunctionType:
-            raise TypeError("The argument must be a function!")
-
         def exit(error,result):
             if self.exited == True:
                  return 
